@@ -1,0 +1,137 @@
+:root {
+   --red: hsl(0, 78%, 62%);
+   --cyan: hsl(180, 62%, 55%);
+   --orange: hsl(34, 97%, 64%);
+   --blue: hsl(212, 86%, 64%);
+
+   --very-dark-blue: hsl(234, 12%, 34%);
+   --grayish-blue: hsl(229, 6%, 66%);
+   --very-light-gray: hsl(0, 0%, 98%);
+}
+
+* {
+   margin: 0;
+   padding: 0;
+}
+
+body {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   height: 100vh;
+   padding-top: 2.5rem;
+
+   font-family: 'Poppins';
+   font-weight: 200;
+   font-size: 15px;
+
+   color: var(--grayish-blue);
+   background-color: var(--very-light-gray);
+}
+
+h1 {
+   font-weight: 200;
+   color: var(--very-dark-blue);
+   font-size: 1.65rem;
+   margin-bottom: 0.8rem;
+}
+
+h1>span {
+   font-weight: 600;
+}
+
+.header-wrapper {
+   max-width: 21rem;
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   margin-block-end: 5rem;
+}
+
+.header-wrapper>p {
+   font-size: 16px;
+}
+
+.card-grid {
+   max-width: 21rem;
+   padding-inline: grid;
+   display: grid;
+   gap: 1.5rem;
+   padding-bottom: 5rem;
+}
+
+@media (min-width: 750px) {
+   .header-wrapper {
+      max-width: 35rem;
+      margin-block-end: 3rem;
+   }
+
+   .header-wrapper > h1 {
+      font-size: 1.85rem;
+   }
+
+   .card-grid {
+      max-width: 65rem;
+      grid-auto-columns: 1fr;
+      grid-template-areas:
+         '...... card-2 ......'
+         'card-1 card-2 card-4'
+         'card-1 card-3 card-4'
+         '...... card-3 ......'
+      ;
+   }
+
+   .card-grid>:nth-child(1) {
+      grid-area: card-1;
+   }
+
+   .card-grid>:nth-child(2) {
+      grid-area: card-2;
+   }
+
+   .card-grid>:nth-child(3) {
+      grid-area: card-3;
+   }
+
+   .card-grid>:nth-child(4) {
+      grid-area: card-4;
+   }
+}
+
+.card {
+   background-color: white;
+   padding: 1.5rem;
+   border-radius: 0.35rem;
+   border-top: 0.35rem solid black;
+   box-shadow: 0 7px 15px rgba(0, 0, 0, 0.15);
+}
+
+.border-1 {
+   border-top: 0.35rem solid var(--cyan);
+}
+
+.border-2 {
+   border-top: 0.35rem solid var(--red);
+}
+
+.border-3 {
+   border-top: 0.35rem solid var(--orange);
+}
+
+.border-4 {
+   border-top: 0.35rem solid var(--blue);
+}
+
+.card>h2 {
+   color: var(--very-dark-blue);
+   font-weight: 600;
+}
+
+.card>p {
+   margin-bottom: 2rem;
+}
+
+.card img {
+   display: block;
+   margin-left: auto;
+}
